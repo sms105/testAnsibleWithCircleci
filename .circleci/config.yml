@@ -23,7 +23,7 @@ jobs:
             sudo apt update -y
             sudo apt-get install locate
             python3 -m pip install ansible
-            export PATH=$PATH:/home/ubuntu/.local/bin
+            export PATH=$PATH:opt/circleci/.pyenv/versions/3.10.5/bin
             echo "============================================== pip 3 show ansible"
             pip3 show ansible
             echo "============================================== opt/circleci"
