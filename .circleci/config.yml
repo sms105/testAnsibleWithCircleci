@@ -21,7 +21,8 @@ jobs:
           command: |
             # install the dependencies needed for your playbook
             sudo apt update -y
-            python3 -m pip install --user ansible
+            python3 -m pip install ansible
+            /usr/bin/ansible-playbook
             
             
       - run:
