@@ -23,6 +23,8 @@ jobs:
             sudo apt update -y
             python3 -m pip install ansible
             export PATH=$PATH:/home/ubuntu/.local/bin
+            echo "============================================== pip 3 show ansible"
+            pip3 show ansible
             echo $PATH
             echo "=============================================="
             ls -alh /home/circleci/
