@@ -10,8 +10,8 @@ orbs:
 # go010
 jobs:
   configure_infrastructure: 
-    docker:
-      - image: amazon/aws-cli
+    machine:
+      image: ubuntu-2004:2022.07.1
     steps:
       - checkout       
       - add_ssh_keys:
@@ -20,10 +20,8 @@ jobs:
           name: Install dependencies
           command: |
             # install the dependencies needed for your playbook
-            yum -y update
-            yum -y install epel-repo
-            yum -y update
-            yum -y install ansible
+            apt update -y
+            apt install ansible -y
             
             
       - run:
