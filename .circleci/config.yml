@@ -25,8 +25,18 @@ jobs:
             export PATH=$PATH:/home/ubuntu/.local/bin
             echo "============================================== pip 3 show ansible"
             pip3 show ansible
+            echo "============================================== find"
+            find . |grep ansible-playbook
             echo "============================================== opt/circleci"
             ls -alh /opt/circleci/
+            echo "============================================== opt/circleci/.pyenv/versions/3.10.5/"
+            ls -alh /opt/circleci/.pyenv/versions/3.10.5/
+            echo "============================================== opt/circleci/.pyenv/versions/3.10.5/lib"
+            ls -alh /opt/circleci/.pyenv/versions/3.10.5/lib/python3.10/site-packages
+            echo "============================================== opt/circleci/.pyenv/versions/3.10.5/"
+            ls -alh /opt/circleci/.pyenv/versions/3.10.5/lib/python3.10/
+            echo "============================================== opt/circleci/.pyenv"
+            ls -alh /opt/circleci/.pyenv/
             echo "============================================== opt/circleci/.pyenv/bin"
             ls -alh /opt/circleci/.pyenv/bin
             echo $PATH
