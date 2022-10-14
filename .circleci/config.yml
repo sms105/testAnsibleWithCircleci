@@ -20,8 +20,10 @@ jobs:
           name: Install dependencies
           command: |
             # install the dependencies needed for your playbook
-            yum update
-            yum install ansible 
+            yum -y update
+            yum -y install epel-repo
+            yum -y update
+            yum -y install ansible
             
             
       - run:
