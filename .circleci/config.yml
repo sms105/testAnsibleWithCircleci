@@ -26,10 +26,8 @@ jobs:
             sudo apt install awscli -y
             
             echo "=============================================== aws ==================================="
-            echo ${AWS_ACCESS_KEY_ID}
-            echo ${AWS_SECRET_ACCESS_KEY}
-            aws configure set aws_access_key_id '${AWS_ACCESS_KEY_ID}'
-            aws configure set aws_secret_access_key '${AWS_SECRET_ACCESS_KEY}'
+            aws configure set aws_access_key_id AKIAWG75HFJIUDUTWKCL
+            aws configure set aws_secret_access_key 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
             aws configure set default.region us-east-1
             echo "=============================================== aws ec2 ==================================="
             aws ec2 describe-instances --query 'Reservations[*].Instances[*].PublicIpAddress' --output text >> inventory
