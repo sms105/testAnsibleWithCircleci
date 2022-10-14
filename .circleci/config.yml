@@ -20,8 +20,8 @@ jobs:
           name: Install dependencies
           command: |
             # install the dependencies needed for your playbook
-            apt update -y
-            apt install ansible -y
+            sudo apt update -y
+            sudo apt install ansible -y
             
             
       - run:
