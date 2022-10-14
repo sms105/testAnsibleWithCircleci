@@ -22,9 +22,7 @@ jobs:
             # install the dependencies needed for your playbook
             sudo apt update -y
             python3 -m pip install ansible
-            /usr/bin/ansible-playbook
-            
-            
+            export PATH=$PATH:/home/ubuntu/.local/bin           
       - run:
           name: Configure server
           command: |
