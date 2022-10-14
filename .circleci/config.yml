@@ -23,7 +23,10 @@ jobs:
             sudo apt update -y
             python3 -m pip install ansible
             export PATH=$PATH:/home/ubuntu/.local/bin
-            echo $PATH           
+            echo $PATH
+            echo "=============================================="
+            ls -alh /home/circleci/
+            ls -alh /home/circleci/.local/bin
       - run:
           name: Configure server
           command: |
