@@ -12,10 +12,22 @@ jobs:
   configure_infrastructure: 
     docker:
       - image: python:3.7-alpine3.11
+    tasks:
+      - name: "update apt packages."
+        become: yes
+        apt:
+          update_cache: yes
+      - name: "update apt packages."
+        become: yes
+        apt:
+          name: openssh
+
+- name: "upgrade packages"
+  become: yes
+  apt:
+    upgrade: yes
     steps:
       - checkout
-      - apt:
-          name: openssh
           
       - run:
           name: Install dependencies
