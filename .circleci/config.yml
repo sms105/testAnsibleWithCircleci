@@ -26,7 +26,7 @@ jobs:
       - run:
           name: Configure server
           command: |
-            ansible-playbook -i inventory.txt main4.yml --private-key= cp.pem
+            ansible-playbook -i inventory.txt main4.yml --private-key=./cp.pem
 
 workflows:
   my_workflow:
