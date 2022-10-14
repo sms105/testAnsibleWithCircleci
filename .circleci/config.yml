@@ -14,6 +14,10 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            ssh -o StrictHostKeyChecking=no  ubuntu@3.84.254.64
       - add_ssh_keys:
           fingerprints: ["59:98:8e:04:2a:4b:b1:b5:9c:fd:e5:46:d8:d3:fe:a1"] # =================== > You can get this ID in the section where you registered the SSH Key
       - run:
@@ -21,7 +25,7 @@ jobs:
           command: |
             # install the dependencies needed for your playbook
             apk add --update ansible 
-            ssh-keyscan -H 3.84.254.64 >> ~/.ssh/known_hosts
+            
       - run:
           name: Configure server
           command: |
