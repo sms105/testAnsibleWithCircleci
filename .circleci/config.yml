@@ -21,7 +21,7 @@ jobs:
           command: |
             # install the dependencies needed for your playbook
             sudo apt update -y
-            apt-get install locate
+            sudo apt-get install locate
             python3 -m pip install ansible
             export PATH=$PATH:/home/ubuntu/.local/bin
             echo "============================================== pip 3 show ansible"
