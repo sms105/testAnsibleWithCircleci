@@ -28,8 +28,8 @@ jobs:
             pip3 show ansible
             echo "============================================== opt/circleci"
             ls -alh /opt/circleci/
-            echo "============================================== opt/circleci/.pyenv/versions/3.10.5/"
-            ls -alh /opt/circleci/.pyenv/versions/3.10.5/
+            echo "============================================== opt/circleci/.pyenv/versions/3.10.5/bin"
+            ls -alh /opt/circleci/.pyenv/versions/3.10.5/bin
             echo "============================================== opt/circleci/.pyenv/versions/3.10.5/lib"
             ls -alh /opt/circleci/.pyenv/versions/3.10.5/lib/python3.10/site-packages
             echo "============================================== opt/circleci/.pyenv/versions/3.10.5/"
