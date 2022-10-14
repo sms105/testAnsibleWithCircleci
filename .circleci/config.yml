@@ -25,6 +25,10 @@ jobs:
             export PATH=$PATH:/home/ubuntu/.local/bin
             echo "============================================== pip 3 show ansible"
             pip3 show ansible
+            echo "============================================== opt/circleci
+            ls -alh /opt/circleci/
+            echo "============================================== opt/circleci/.pyenv/bin
+            ls -alh /opt/circleci/.pyenv/bin
             echo $PATH
             echo "=============================================="
             ls -alh /home/circleci/
