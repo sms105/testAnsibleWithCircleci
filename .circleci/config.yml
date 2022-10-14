@@ -21,11 +21,6 @@ jobs:
         become: yes
         apt:
           name: openssh
-
-- name: "upgrade packages"
-  become: yes
-  apt:
-    upgrade: yes
     steps:
       - checkout
           
