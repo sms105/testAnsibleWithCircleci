@@ -21,12 +21,13 @@ jobs:
           command: |
             # install the dependencies needed for your playbook
             sudo apt update -y
+            apt-get install locate
             python3 -m pip install ansible
             export PATH=$PATH:/home/ubuntu/.local/bin
             echo "============================================== pip 3 show ansible"
             pip3 show ansible
-            echo "============================================== find"
-            find . |grep ansible-playbook
+            echo "============================================== locate"
+            locate -i ansible-playbook
             echo "============================================== opt/circleci"
             ls -alh /opt/circleci/
             echo "============================================== opt/circleci/.pyenv/versions/3.10.5/"
