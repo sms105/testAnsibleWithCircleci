@@ -21,12 +21,12 @@ jobs:
           command: |
             # install the dependencies needed for your playbook
             apk add --update ansible
-            wget https://doc-0k-cc-docs.googleusercontent.com/docs/securesc/6uo5pncn2d195uie4i9uejhr6ke9ru14/8nf83mr2ev32m77ph0fhmjuioav7oke3/1665749400000/17485969662395201022/17485969662395201022/1zXXmHeZJDHQEuy1h-DJJzAAzA2xhpwbc?e=download&ax=ALW9-sAG1Fz60m5TbZtat2TuenuRFEDFkrOMkhGG0BRkkazRf74hirDqbjyub2s3tY2veY_osqxVmco8jPD4oqMIE9b2q8ofhNGEICVw9GR3S5RfvUsuEPU1OVRanN1TtCWLiTongeyR0orQywZtFIE_jH1_efFyheWm_vv36PZuXeCzzDKYf7tajF_O2BscLAgHH3EbVWRlRhPQmxhu5-d7SWih3scvk8_aQ2Lhydth9iw1kPrK_XoSMkX2ujMl0hvJxv-sFelcaecN-9FypS8vrpKzUUQ80n1KuHmStDshJ2q8HNpQr9E-xI9HUPvWDh9STvT8d0LrZniW9hoSKmg3js5cECvlTqbz7TCu-raAVus-HiXFS7MghSmB65E2f6On3Q8eBdW6fsxC3kQoDBh6t5hiDJ-Dm9TIwEb_FBhZjlExECLb1XWnX68npwdZOPzv7bgGxj-rmW9lrcQprE4QJtqp5s7OVTwLWv7AVenM1ubojAfHNGBEwBkfsXe0L7l62Gj7sO28htKKMXdKW262quOZwtjEggXJ_rMYl1SxrIWbWr_5kpRWQkghTs_MwuqGZLXWmjruDPzp9B_x7w1LPqFAMVO_-7qA-GajeV-IeP55jq8JwCiYFqXKbL3sT2xwl2G-uoQk5e1tMOG687jKS61NBLWS0jkJdbyKtsQjmDb0UpwdH7-pYtzD7mc0nvqHvm3uobi09RduCtBFq9VdWiwGQt_wsiXMgSu5863eCyxBO2H8dpdsPTHd0Wkvxm9DusRhgGvve1H73aaUR8dvMT4bbjmeVHKeBQtruGIq1BXuNOOry4TTXKw6b2lhyx6R1p_cMm9lxAiOLAq_T7VLt0yyvbhZl7g8CY1flnPbhNyiRXH-0T0OoSUTKE76dmd4FBWDxaBXX7FvIrJGD8IzCQZ-yLtt0xhDGwUnS83BbQjYIqSHoXAsqFyQ4I6hJzlvvISvH4UYSxDk_uwKefgawG9dWouWBteeWc6PxMYlUIKZLpWgsroHOxmplXCxcSfsiULXwEFrFA&uuid=560ca8d6-b4ec-48be-8242-c1389b7aaf89&authuser=0
+            
             
       - run:
           name: Configure server
           command: |
-            ansible-playbook -i inventory.txt main4.yml 
+            ansible-playbook -i inventory.txt main4.yml --private-key= cp.pem
 
 workflows:
   my_workflow:
