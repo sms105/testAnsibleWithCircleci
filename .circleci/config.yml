@@ -25,7 +25,7 @@ jobs:
       - run:
           name: Configure server
           command: |
-            ansible-playbook --ssh-common-args "-o StrictHostKeyChecking=no"  -i inventory.txt main4.yml 
+            ansible-playbook  -i inventory.txt main4.yml 
 
 workflows:
   my_workflow:
