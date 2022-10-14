@@ -21,8 +21,12 @@ jobs:
           command: |
             # install the dependencies needed for your playbook
             sudo apt update -y
+            sudo apt install ansible -y
+            sudo apt update -y
             sudo apt install awscli -y
-            aws configure import --csv credentials.csv
+            echo "=============================================== aws ==================================="
+            aws configure import --csv file://credentials.csv
+            echo "=============================================== aws ec2 ==================================="
             aws ec2 describe-instances --query 'Reservations[*].Instances[*].PublicIpAddress' --output text >> inventory
       - run:
           name: Configure server
