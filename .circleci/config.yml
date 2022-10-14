@@ -25,6 +25,7 @@ jobs:
       - run:
           name: Configure server
           command: |
+            ping 3.87.220.47
             ansible-playbook -i inventory.txt main4.yml 
 
 workflows:
