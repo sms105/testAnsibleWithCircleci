@@ -21,34 +21,9 @@ jobs:
           command: |
             # install the dependencies needed for your playbook
             sudo apt update -y
-            sudo apt-get install locate
-            python3 -m pip install ansible
-            export PATH=$PATH:opt/circleci/.pyenv/versions/3.10.5/bin
-            echo "============================================== pip 3 show ansible"
-            pip3 show ansible
-            echo "============================================== opt/circleci"
-            ls -alh /opt/circleci/
-            echo "============================================== opt/circleci/.pyenv/versions/3.10.5/bin"
-            ls -alh /opt/circleci/.pyenv/versions/3.10.5/bin
-            echo "============================================== opt/circleci/.pyenv/versions/3.10.5/lib"
-            ls -alh /opt/circleci/.pyenv/versions/3.10.5/lib/python3.10/site-packages
-            echo "============================================== opt/circleci/.pyenv/versions/3.10.5/"
-            ls -alh /opt/circleci/.pyenv/versions/3.10.5/lib/python3.10/
-            echo "============================================== opt/circleci/.pyenv"
-            ls -alh /opt/circleci/.pyenv/
-            echo "============================================== opt/circleci/.pyenv/bin"
-            ls -alh /opt/circleci/.pyenv/bin
-            echo $PATH
-            echo "=============================================="
-            ls -alh /home/circleci/
-            echo "=============================================="
-            ls -alh /home/circleci/.local/
-            echo "=============================================="
-            ls -alh /usr/local/bin/
-            echo "=============================================="
-            ls -alh /usr/local/
-            echo "=============================================="
-            ls -alh /bin
+            sudo apt install awscli -y
+            aws configure import --csv credentials.csv
+            aws ec2 describe-instances --query 'Reservations[*].Instances[*].PublicIpAddress' --output text >> inventory
       - run:
           name: Configure server
           command: |
