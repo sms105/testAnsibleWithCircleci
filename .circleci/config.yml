@@ -20,6 +20,7 @@ jobs:
           name: Install dependencies
           command: |
             # install the dependencies needed for your playbook
+            yum update
             yum install ansible 
             
             
